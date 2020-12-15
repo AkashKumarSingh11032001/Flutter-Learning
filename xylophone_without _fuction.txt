@@ -1,0 +1,88 @@
+import 'package:audioplayers/audio_cache.dart';
+import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+void main() {
+  runApp(
+    XylophoneApp(),
+  );
+}
+
+class XylophoneApp extends StatelessWidget {
+  void note(int noteNo) {
+    final player = AudioCache();
+    player.play('note$noteNo.wav');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: FlatButton(
+                  color: Colors.red,
+                  onPressed: () {
+                    note(1);
+                  },
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.green,
+                  onPressed: () {
+                    note(2);
+                  },
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.blue,
+                  onPressed: () {
+                    note(3);
+                  },
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.pink,
+                  onPressed: () {
+                    note(4);
+                  },
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.blueGrey,
+                  onPressed: () {
+                    note(5);
+                  },
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.yellowAccent,
+                  onPressed: () {
+                    note(6);
+                  },
+                ),
+              ),
+              Expanded(
+                child: FlatButton(
+                  color: Colors.deepOrange,
+                  onPressed: () {
+                    note(7);
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
